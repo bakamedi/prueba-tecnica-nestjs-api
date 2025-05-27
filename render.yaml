@@ -5,7 +5,7 @@ services:
     plan: free
     buildCommand: yarn install && npx prisma generate && yarn build
     startCommand: |
-      npx prisma migrate deploy
+      npx prisma db push
       node dist/main
     envVars:
       - key: DATABASE_URL
