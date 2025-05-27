@@ -10,16 +10,6 @@ services:
         fromDatabase:
           name: nestjs-db
           property: connectionString
-      - key: PORT
-        value: 3000
-      - key: POSTGRES_USER
-        value: admin
-      - key: POSTGRES_PASSWORD
-        value: admin123
-      - key: POSTGRES_DB
-        value: nest_prisma_db
-      - key: POSTGRES_PORT
-        value: 5432
 
 databases:
   - name: nestjs-db
