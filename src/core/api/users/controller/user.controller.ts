@@ -10,7 +10,7 @@ import { ZodValidationPipe } from 'src/shared/pipes/zod-validation.pipe';
 export class UserController {
   constructor(private readonly createUserUseCase: CreateUserUseCase) {}
 
-  @Post('')
+  @Post('save')
   @UsePipes(new ZodValidationPipe(CreateUserProfileSchema))
   update(@Body() body: CreateUserProfileDto) {
     return this.createUserUseCase.execute(body);

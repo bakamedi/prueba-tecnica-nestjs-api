@@ -2,8 +2,8 @@ import { z } from 'zod';
 import { UserType } from '@prisma/client';
 
 export const CreateUserProfileSchema = z.object({
-  name: z.string().email().nonempty(),
-  email: z.string().max(20).nonempty(),
+  name: z.string().max(20).nonempty(),
+  email: z.string().email().nonempty(),
   userType: z.nativeEnum(UserType),
 });
 
