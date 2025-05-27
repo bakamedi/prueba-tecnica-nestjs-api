@@ -4,7 +4,9 @@ services:
     env: node
     plan: free
     buildCommand: yarn install && npx prisma generate && npx prisma migrate --name init  && yarn build
-    startCommand: node dist/main
+    startCommand: |
+      npx prisma migrate deploy
+      node dist/main
     envVars:
       - key: DATABASE_URL
         fromDatabase:
