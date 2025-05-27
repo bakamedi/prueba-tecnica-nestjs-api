@@ -16,7 +16,7 @@ async function bootstrap() {
   app.enableCors({
     origin: process.env.ORIGIN_URL, // URL de tu frontend
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true, // Si usas cookies o autenticación
+    credentials: false,
   });
 
   // Imprimir log cuando el servidor se haya levantado
