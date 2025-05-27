@@ -3,7 +3,7 @@ services:
     name: nestjs-api
     env: node
     plan: free
-    buildCommand: yarn install && yarn build
+    buildCommand: yarn install && yarn prisma generate && prisma migrate --name init  && yarn build
     startCommand: node dist/main
     envVars:
       - key: DATABASE_URL
