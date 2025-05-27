@@ -3,4 +3,5 @@ import { User } from '../User';
 
 export interface IUser {
   create(createUserProfileDto: CreateUserProfileDto): Promise<User>;
+  getOptions(): string[];
 }

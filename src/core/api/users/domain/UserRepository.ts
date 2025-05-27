@@ -10,6 +10,9 @@ import { User } from './User';
 @Injectable()
 export class UserRepository implements IUser {
   constructor(private readonly prisma: PrismaService) {}
+  getOptions(): string[] {
+    return ['Agent', 'Main Corp', 'Accounting'];
+  }
   async create(createUserProfileDto: CreateUserProfileDto): Promise<User> {
     const user = await this.prisma.user.create({
       data: {
