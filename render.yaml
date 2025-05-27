@@ -3,7 +3,7 @@ services:
     name: nestjs-api
     env: node
     plan: free
-    buildCommand: yarn install && npx prisma generate && npx prisma migrate --name init  && yarn build
+    buildCommand: yarn install && npx prisma generate && yarn build
     startCommand: |
       npx prisma migrate deploy
       node dist/main
