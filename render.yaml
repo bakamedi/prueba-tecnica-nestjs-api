@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: nestjs-api
+    env: node
+    plan: free
+    buildCommand: yarn install && yarn build
+    startCommand: node dist/main
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: nestjs-db
+          property: connectionString
+      - key: PORT
+        value: 3000
+      - key: POSTGRES_USER
+        value: admin
+      - key: POSTGRES_PASSWORD
+        value: admin123
+      - key: POSTGRES_DB
+        value: nest_prisma_db
+      - key: POSTGRES_PORT
+        value: 5432
+
+databases:
+  - name: nestjs-db
+    plan: free
